@@ -35,4 +35,21 @@ public class ProductoServicio implements ProductoInterface {
         }
         return monto;
     }
+
+    public StringBuilder Factura() {
+        StringBuilder mensaje = new StringBuilder();
+        mensaje.append("Factura:\n");
+        for (Producto producto : productos) {
+            mensaje.append(producto.getNombre());
+            mensaje.append(" | ");
+            mensaje.append(producto.getCantidad());
+            mensaje.append(" | ");
+            mensaje.append(producto.getPrecio());
+            mensaje.append(" | ");
+            mensaje.append(getMonto());
+            mensaje.append("\n");
+        }
+        return mensaje;
+    }
+
 }
